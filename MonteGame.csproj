@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project Sdk="Microsoft.NET.Sdk">
+  <PropertyGroup>
+    <!-- pre built binaries cause missing meta warnings -->
+    <NoWarn>$(NoWarn);MSB3246</NoWarn>
+    <!-- Set the name of the assembly -->
+    <AssemblyName>MY GAME NAME</AssemblyName>
+    <OutputType>Exe</OutputType>
+    <TargetFramework>net8.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <!-- Required to work -->
+    <Nullable>enable</Nullable>
+    <!-- Required to work -->
+    <AllowUnsafeBlocks>True</AllowUnsafeBlocks>
+  </PropertyGroup>
+  <!-- Libraries needed to run Monte Engine -->
+  <ItemGroup>
+    <Reference Include="MonteEngine.dll" />
+    <None Include="MonteEngine.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Reference Include="MonteSDL2Binds.dll" />
+    <None Include="MonteSDL2Binds.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Reference Include="SDL2.dll" />
+    <None Include="SDL2.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Reference Include="SDL2_image.dll" />
+    <None Include="SDL2_image.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Reference Include="SDL2_ttf.dll" />
+    <None Include="SDL2_ttf.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+    <Reference Include="SDL2_mixer.dll" />
+    <None Include="SDL2_mixer.dll">
+      <CopyToOutputDirectory>PreserveNewest</CopyToOutputDirectory>
+    </None>
+  </ItemGroup>
+  <!-- The content folder needs to be same as settings-->
+  <ItemGroup>
+    <EmbeddedResource Include="content/**/*" />
+  </ItemGroup>
+  <!-- Eclude filetypes or entire folders-->
+  <ItemGroup>
+    <EmbeddedResource Remove="content/**/*.aseprite;content/DO_NOT_INCLUDE/**" />
+  </ItemGroup>
+</Project>
