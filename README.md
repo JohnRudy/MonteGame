@@ -14,5 +14,4 @@ Download this template and do the necessary changes in it's .csproj file (change
     - {your_game}.dll
  - Executable binary
     - windows.exe or unix binary file
- - Content folder and it's .mrd files
  - LICENSE from project root must be packaged with the end product.
